@@ -3,13 +3,13 @@ $( document ).ready(function() {
 	setInterval(function(){
 		make_stars();
 		remove_stars();
-	}, 1000);
+	}, 500);
 
 });
 
 
 function make_stars(){
-	var star_count = Math.floor((Math.random() * 40) + 10);
+	var star_count = Math.floor((Math.random() * 20) + 10);
 	for (var i = 0; i <= star_count; i++) {
 		coords();
 	}
