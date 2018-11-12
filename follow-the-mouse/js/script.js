@@ -1,40 +1,35 @@
-/*****************************************/
 $( document ).ready(function() {
+
 	$('html').mousemove(function( event ) {
 		var x = event.pageX;
 		var y = event.pageY;
-		create_divs(x,y);
+		make_stars(x, y);
 	});
 
-	var myVar = setInterval(function(){ opacity_0() }, 500);
-	var g = "";
-	
+	setInterval(function(){ remove_stars() }, 500);
+
 });
 
-function opacity_0() {
-    var est = $(".est");
-    var length = est.length;
-    if (est.length != 0) {
-        for (var i = 0; i < length; i++) {
-            g = document.getElementsByClassName('est')[i].style.opacity;
-            if (g == 0) {
-                est[i].remove();
-                est = $(".est");
-                length = est.length;
+function make_stars(x, y){
+    $('body').prepend('<span class="star-fade">&#9733;</span>');
+    x -= 12.5;
+    y -= 25;
+    $(".star-fade").css({
+        "top" : y,
+        "left" : x,
+    })
+    $(".star-fade").fadeTo(1500, 0);
+    $(".star-fade").attr("class","star");
+}
+
+function remove_stars() {
+    var star_count = $('.star').length;
+    if (star_count != 0) {
+        for (var i = 0; i < star_count; i++) {
+            var opacity = $('.star:eq('+i+')').css("opacity");
+            if (opacity == 0) {
+                $('.star:eq('+i+')').remove();
             }
         }
     }
-}
-
-function create_divs(x,y){
-    $('body').prepend('<p class="stexcvac">&#9733;</p>');
-    x -= 12.5;
-    y -= 25;
-    $(".stexcvac").css({
-        "top" : y,
-        "left" : x,
-        "opacity" : "1"
-    })
-    $(".stexcvac").fadeTo(1500, 0);
-    $(".stexcvac").attr("class","est");
 }

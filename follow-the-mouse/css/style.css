@@ -14,7 +14,7 @@ body {
     cursor: none;
 }
 
-.est {
+.star {
     opacity: 1;
     color: white;
     font-size: 35px;
@@ -22,12 +22,8 @@ body {
     margin: 0px;
     animation: size_change 2.1s infinite;
 }
+
 @keyframes size_change {
     0%   {font-size: 35px;}
     100% {font-size: 0px;}
-}
-.container {
-    height: 571px;
-    margin: 30px auto;
-    width: 100%;
 }
