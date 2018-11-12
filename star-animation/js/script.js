@@ -21,7 +21,7 @@ function coords(){
 	var x = Math.floor((Math.random() * window_width) + 1);
 	var y = Math.floor((Math.random() * window_height) + 1);
 
-	$('body').prepend('<p class="star-fade">&#9733;</p>');
+	$('body').prepend('<span class="star-fade">&#9733;</span>');
 	$(".star-fade").css({
 		"top" : y,
 		"left" : x
